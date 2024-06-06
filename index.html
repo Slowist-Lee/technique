@@ -6,15 +6,16 @@
 
     <script>
         function getRandomNumber() {
-            const min = 5;
-            const max = 15;
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+            const min = 10;
+            const max = 50;
+            const randomNumber = Math.floor(Math.random() * ((max - min) / 5 + 1)) * 5 + min;
+            return randomNumber;
         }
 
         function displayRandomNumber() {
             const randomNumber = getRandomNumber();
             const randomNumberElement = document.getElementById('randomNumber');
-            randomNumberElement.innerText = randomNumber;
+            randomNumberElement.innerText = `高考英语+ ${randomNumber} 分`;
         }
 
         function show() {
@@ -42,13 +43,22 @@
             align-items: center;
             display: flex;
             justify-content: center;
-            height: 100%;
+            height: 90%;
             width: 100%;
         }
 
         #div {
             margin: auto;
             vertical-align: middle;
+        }
+
+        #footer {
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            padding: 10px 0;
+            background-color: #f8f9fa;
         }
     </style>
 </head>
@@ -62,7 +72,9 @@
             </button>
         </div>
     </div>
-
+    <div id="footer">
+        IAI专属 By_Slowist
+    </div>
 </body>
 
 </html>
