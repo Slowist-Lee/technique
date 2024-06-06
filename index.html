@@ -5,6 +5,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <script>
+        let clickCount = 0;
+
         function getRandomNumber() {
             const min = 10;
             const max = 50;
@@ -13,9 +15,18 @@
         }
 
         function displayRandomNumber() {
-            const randomNumber = getRandomNumber();
-            const randomNumberElement = document.getElementById('randomNumber');
-            randomNumberElement.innerText = `高考英语+ ${randomNumber} 分`;
+            if (clickCount >= 30) {
+                const btn = document.getElementById('btn');
+                btn.hidden = true;
+                const randomNumberElement = document.getElementById('randomNumber');
+                randomNumberElement.innerText = "别做白日梦了，赶紧复习去吧";
+                randomNumberElement.style.fontSize = '2em'; // 设置大号字体
+            } else {
+                const randomNumber = getRandomNumber();
+                const randomNumberElement = document.getElementById('randomNumber');
+                randomNumberElement.innerText = `高考英语+ ${randomNumber} 分`;
+                clickCount++;
+            }
         }
 
         function show() {
@@ -73,7 +84,7 @@
         </div>
     </div>
     <div id="footer">
-        IAI专属 By_Slowist
+        By_Slowist
     </div>
 </body>
 
