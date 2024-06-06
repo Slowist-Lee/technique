@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script>
+        function getRandomNumber() {
+            const min = 5;
+            const max = 15;
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function displayRandomNumber() {
+            const randomNumber = getRandomNumber();
+            const randomNumberElement = document.getElementById('randomNumber');
+            randomNumberElement.innerText = randomNumber;
+        }
+
+        function show() {
+            const btn = document.getElementById('btn');
+            btn.hidden = false;
+        }
+
+        window.oncontextmenu = () => false;
+        window.onkeydown = () => {
+            if (window.event && window.event.keyCode == 123) {
+                return false;
+            }
+            return false;
+        }
+    </script>
+
+    <style>
+        html,
+        body {
+            text-align: center;
+            height: 100%;
+        }
+
+        #main {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        #div {
+            margin: auto;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="div" onmouseleave="show()">
+            <div id="randomNumber" class="mb-3"></div>
+            <button id="btn" onclick="displayRandomNumber()" type="button" class="btn btn-primary">
+                click me
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
