@@ -16,8 +16,8 @@
 
         function displayRandomNumber() {
             if (clickCount >= 30) {
-                const btn = document.getElementById('btn');
-                btn.hidden = true;
+                const img = document.getElementById('btnImg');
+                img.hidden = true;
                 const randomNumberElement = document.getElementById('randomNumber');
                 randomNumberElement.innerText = "别做白日梦了，赶紧复习去吧";
                 randomNumberElement.style.fontSize = '2em'; // 设置大号字体
@@ -30,8 +30,8 @@
         }
 
         function show() {
-            const btn = document.getElementById('btn');
-            btn.hidden = false;
+            const img = document.getElementById('btnImg');
+            img.hidden = false;
         }
 
         window.oncontextmenu = () => false;
@@ -78,13 +78,11 @@
     <div id="main">
         <div id="div" onmouseleave="show()">
             <div id="randomNumber" class="mb-3"></div>
-            <button id="btn" onclick="displayRandomNumber()" type="button" class="btn btn-primary">
-                click me
-            </button>
+            <img id="btnImg" src="1.gif" onclick="displayRandomNumber()" alt="Click me" class="img-fluid" style="cursor: pointer;">
         </div>
     </div>
     <div id="footer">
-        By_Slowist
+        IAI专属 By_Slowist
     </div>
 </body>
 
