@@ -15,7 +15,7 @@
         }
 
         function displayRandomNumber() {
-            if (clickCount >= 30) {
+            if (clickCount >= 15) {
                 const img = document.getElementById('btnImg');
                 img.hidden = true;
                 const randomNumberElement = document.getElementById('randomNumber');
@@ -24,7 +24,7 @@
             } else {
                 const randomNumber = getRandomNumber();
                 const randomNumberElement = document.getElementById('randomNumber');
-                randomNumberElement.innerText = `高考英语+ ${randomNumber} 分`;
+                randomNumberElement.innerText = `高考总分+ ${randomNumber} 分`;
                 clickCount++;
             }
         }
